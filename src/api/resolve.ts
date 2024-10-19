@@ -16,13 +16,13 @@ export interface VitestResolution {
 }
 
 export function resolveVitestPackage(cwd: string, folder: vscode.WorkspaceFolder | undefined): VitestResolution | null {
-  const vitestPackageJsonPath = resolveVitestPackagePath(cwd, folder)
-  if (vitestPackageJsonPath) {
-    return {
-      vitestNodePath: resolveVitestNodePath(vitestPackageJsonPath),
-      vitestPackageJsonPath,
-    }
-  }
+  // const vitestPackageJsonPath = resolveVitestPackagePath(cwd, folder)
+  // if (vitestPackageJsonPath) {
+  //   return {
+  //     vitestNodePath: resolveVitestNodePath(vitestPackageJsonPath),
+  //     vitestPackageJsonPath,
+  //   }
+  // }
 
   const pnp = resolveVitestPnpPackagePath(folder?.uri.fsPath || cwd)
   if (!pnp)
